@@ -5,22 +5,31 @@ using UnityEngine;
 public class scriptball1 : MonoBehaviour
 {
     public int speed = 30;
+    public Rigidbody2D sesuatu;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2 (2,1)*speed;
+        sesuatu.velocity = new Vector2(-1, -1) * speed;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if(other.collider.name=="DindingKanan"||other.collider.name=="DindingKiri"){
-            GetComponent<Transform>().position = new Vector2 (0,0);
-        }    
+        if(other.collider.name=="DindingKanan" || other.collider.name=="DindingKiri"){
+            StartCoroutine(wait());
+        }
     }
-    
+    IEnumerator wait(){
+        sesuatu.velocity = new Vector2(0,0)*speed;
+        GetComponent<Transform>().position = new Vector2(8,0);
+        yield return new WaitForSeconds(1);
+        sesuatu.velocity = new Vector2(-1, -1) * speed;
+
+        
+        
+}
 }
