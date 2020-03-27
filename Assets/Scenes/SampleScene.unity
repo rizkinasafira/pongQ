@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  sesuatu: {fileID: 1433977929}
+  sebuah: {fileID: 1433977929}
 --- !u!1 &1579589569
 GameObject:
   m_ObjectHideFlags: 0
