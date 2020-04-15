@@ -45,8 +45,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\EndingScript.cs" />
      <Compile Include="Assets\Play.cs" />
      <Compile Include="Assets\PlayScript.cs" />
+     <Compile Include="Assets\ScoringScript.cs" />
      <Compile Include="Assets\TimerScript.cs" />
      <Compile Include="Assets\kananscript.cs" />
      <Compile Include="Assets\kiriscript.cs" />
