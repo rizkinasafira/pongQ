@@ -11,6 +11,7 @@ public class scriptball1 : MonoBehaviour
     public Animation anim;
 
     public Animator animtr;
+    public AudioSource hitEffect;
     void Start()
     {
         int x = Random.Range(0,2) * 2 - 1;
@@ -29,6 +30,7 @@ public class scriptball1 : MonoBehaviour
         }else{
             sesuatu.GetComponent<Transform>().localScale = new Vector3(-1, 1, 1);
         }
+        
     }
 
     void OnCollisionEnter2D(Collision2D other) {
@@ -36,6 +38,9 @@ public class scriptball1 : MonoBehaviour
             masterScript.GetComponent<ScoringScript>().UpdateScore(other.collider.name);
             StartCoroutine(jeda());
         }    
+        if(other.collider.tag=="Player"){
+            hitEffect.Play();
+        }
     }
     
     IEnumerator jeda(){
